@@ -6,6 +6,7 @@
 </head>
 <body>
 
+
 <?php
 $dir = "/imweb1_b";
  
@@ -17,7 +18,8 @@ if (is_dir($dir)) {
         }
         closedir($dh);
     }
-}
+
+$dirlist->close();
 ?>
 
 </body>
