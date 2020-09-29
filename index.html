@@ -7,7 +7,7 @@
 <body>
 
 <?PHP
-$dirpath = " ";	//表示対象のディレクトリパス
+$dirpath = "./";	//表示対象のディレクトリパス
 $dirlist = dir($dirpath);
 while( $filename = $dirlist->read() ){
 	//ディレクトリの場合は表示対象外（＝ファイルのみ表示）
