@@ -6,7 +6,19 @@
 </head>
 <body>
 
+<?php
+$dir = 'd:/test1/';
 
+$filelist = glob($dir . '*');
+
+foreach ($filelist as $file) {
+
+	if (is_file($file)) {
+		print($file);
+		echo nl2br("\n");
+	}
+}
+?>
 
 </body>
 </html>
