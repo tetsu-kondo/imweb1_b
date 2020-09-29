@@ -6,18 +6,16 @@
 </head>
 <body>
 
-<?php
-$dir = "./";
- 
-// 既知のディレクトリをオープンし、その内容を読み込みます。
-if (is_dir($dir)) {
-    if ($dh = opendir($dir)) {
-        while (($file = readdir($dh)) !== false) {
-            echo "filename: $file : filetype: " . filetype($dir . $file) . "\n";
-        }
-        closedir($dh);
-    }
+<?PHP
+$dirpath = "./";	//表示対象のディレクトリパス
+$dirlist = dir($dirpath);
+while( $filename = $dirlist->read() ){
+	//ディレクトリの場合は表示対象外（＝ファイルのみ表示）
+	if( (is_dir($filename) == false) && ($filename!=".." || $filename!= "." ) ){
+		print("<a href=\"" . $dirpath . $filename . "\">".$filename."</a><br />\n");
+	}
 }
+$dirlist->close();
 ?>
 
 </body>
